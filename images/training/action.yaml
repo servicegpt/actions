@@ -1,0 +1,17 @@
+name: 'ServiceGPT Training'
+description: 'Train ServiceGPT model on helpdesk data'
+inputs:
+  source:
+    description: Source of the helpdesk data
+    required: true
+outputs:
+  benchmarks:
+    description: 'Benchmark data'
+runs:
+  using: 'docker'
+  image: 'Dockerfile'
+  env:
+    openai_api_key: ${{ secrets.OPENAI_API_KEY }}
+    service_secret: ${{ secrets.SERVICE_SECRET }}
+  args:
+  - ${{ inputs.source }}

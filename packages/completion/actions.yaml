@@ -1,0 +1,9 @@
+name: completion
+description: run serviceGPT completion
+inputs:
+  query:
+    description: user query
+    required: true
+runs:
+  using: 'node16'
+  main: 'lib/main.js'

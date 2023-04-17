@@ -1,0 +1,10 @@
+name: training
+description: run serviceGPT taining
+env:
+  openai_api_key: ${{ secrets.OPENAI_API_KEY }}
+  service_source: ${{ secrets.SERVICE_SOURCE }}
+  service_secret: ${{ secrets.SERVICE_SECRET }}
+inputs:
+runs:
+  using: 'node16'
+  main: 'lib/main.js'
