@@ -1,0 +1,25 @@
+{
+  "name": "@servicegpt/actions-completion",
+  "version": "0.0.0",
+  "private": true,
+  "description": "ServiceGPT training action",
+  "main": "lib/src/main.js",
+  "scripts": {
+    "build": "tsc",
+    "format": "prettier --write **/*.ts",
+    "format-check": "prettier --check **/*.ts",
+    "lint": "eslint **/*.ts",
+    "package": "ncc build --source-map --license licenses.txt",
+    "test": "jest",
+    "ci:package": "pnpm run build && pnpm run package"
+  },
+  "dependencies": {
+    "@actions/core": "1.10.0",
+    "@dalenguyen/openai": "^0.11.3",
+    "got": "^12.6.0",
+    "openai": "^3.2.1"
+  },
+  "devDependencies": {
+    "@types/got": "^9.6.12"
+  }
+}
